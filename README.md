@@ -6,7 +6,7 @@ I'm writing these as I learn, so think of it less like a polished textbook and m
 
 ## 📚 What's inside
 
-Made the overall structure of 300+ topics across 12 modules, each one its own folder, each topic its own file — with diagrams where they actually help and real gotchas where I've hit them.
+Made the plan to cover 300+ topics across 12 modules, each one its own folder, each topic its own file — with diagrams where they actually help and real gotchas where I've hit them. Let's see how far we are at the time of your reading.
 
 ```
 Backend-Development-Module/
@@ -21,8 +21,7 @@ Backend-Development-Module/
 ├── 09-linux/
 ├── 10-networking/
 ├── 11-distributed-systems/
-├── 12-observability-devops/
-└── 13-production-problems/
+└── 12-observability-devops/
 ```
 
 ## 🚧 Status
