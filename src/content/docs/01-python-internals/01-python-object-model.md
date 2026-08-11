@@ -303,7 +303,15 @@ def f(x, cache={}):
 <details>
 <summary>Answer</summary>
 
-The default `{}` is created once at function-definition time and reused across every call that doesn't pass `cache` explicitly — it silently accumulates state between unrelated calls. Use `cache=None` and create the dict inside the function instead.
+The default `{}` is created once at function-definition time and reused across every call that doesn't pass `cache` explicitly — it silently accumulates state between unrelated calls:
+
+```python
+f(2)   # {2: 4}
+f(3)   # {2: 4, 3: 9}       <- 2 is still in there from the last call!
+f(2)   # {2: 4, 3: 9}       <- looks "cached", but it's really just leftover state
+```
+
+That third call didn't recompute anything — it just returned the dict as it happened to be left by earlier, unrelated calls. Fix: use `cache=None` and create the dict inside the function instead.
 
 </details>
 
