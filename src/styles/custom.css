@@ -1,0 +1,51 @@
+/* A warmer, less "corporate docs" palette than Starlight's default blue. */
+
+:root {
+  --sl-color-accent-low: #ffe8c2;
+  --sl-color-accent: #b5661a;
+  --sl-color-accent-high: #7a4300;
+  --sl-color-white: #1c1f2b;
+  --sl-color-gray-1: #2c3140;
+  --sl-color-gray-2: #4b5165;
+  --sl-color-gray-3: #6b7286;
+  --sl-color-gray-4: #a3aabd;
+  --sl-color-gray-5: #d3d8e4;
+  --sl-color-gray-6: #eef1f6;
+  --sl-color-gray-7: #f7f9fc;
+  --sl-color-black: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --sl-color-accent-low: #4a2e00;
+  --sl-color-accent: #ffb454;
+  --sl-color-accent-high: #ffd699;
+  --sl-color-white: #f3f2ee;
+  --sl-color-gray-1: #e4e2db;
+  --sl-color-gray-2: #c9c6bc;
+  --sl-color-gray-3: #98957f;
+  --sl-color-gray-4: #5c5946;
+  --sl-color-gray-5: #383626;
+  --sl-color-gray-6: #232819;
+  --sl-color-gray-7: #1a1d13;
+  --sl-color-black: #14150f;
+}
+
+/* A touch of warmth: pages read as "notebook" rather than "reference manual". */
+.sl-markdown-content h1,
+.sl-markdown-content h2 {
+  letter-spacing: -0.01em;
+}
+
+.sl-markdown-content blockquote {
+  border-radius: 0.5rem;
+  background: var(--sl-color-gray-6);
+  border-left: 4px solid var(--sl-color-accent);
+  padding: 0.75rem 1rem;
+}
+
+/* Mermaid diagrams should breathe a bit and stay readable on dark bg. */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
