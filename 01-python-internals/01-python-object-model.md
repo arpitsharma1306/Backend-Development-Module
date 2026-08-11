@@ -1,3 +1,9 @@
+---
+title: 1. Python Object Model
+parent: 01 · Python Internals
+nav_order: 1
+---
+
 # 1. Python Object Model (`id`, `type`, mutability)
 
 > Module 1 · Python Internals · Topic 1/20
