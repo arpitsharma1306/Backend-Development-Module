@@ -257,8 +257,7 @@ obj.__hash__()               # only meaningful for hashable (usually immutable) 
 
 ## Quick self-test
 
-<details>
-<summary><strong>Q1.</strong> What does this print?</summary>
+**Q1.** What does this print?
 
 ```python
 a = [1, 2]
@@ -267,12 +266,14 @@ a = a + [3]
 print(b)
 ```
 
-**Answer:** `[1, 2]`. `a + [3]` creates a **new** list and rebinds `a` to it. `b` still points at the original list, which was never mutated.
+<details>
+<summary>Answer</summary>
+
+`[1, 2]`. `a + [3]` creates a **new** list and rebinds `a` to it. `b` still points at the original list, which was never mutated.
 
 </details>
 
-<details>
-<summary><strong>Q2.</strong> Are these <code>True</code> or <code>False</code>?</summary>
+**Q2.** Are these `True` or `False`?
 
 ```python
 x = 256
@@ -284,12 +285,14 @@ y = 257
 print(x is y)   # ?
 ```
 
-**Answer:** `True`, then usually `False`. `256` is inside CPython's cached small-int range (`-5` to `256`); `257` is not, so two separate objects are typically created (this can vary — never rely on it).
+<details>
+<summary>Answer</summary>
+
+`True`, then usually `False`. `256` is inside CPython's cached small-int range (`-5` to `256`); `257` is not, so two separate objects are typically created (this can vary — never rely on it).
 
 </details>
 
-<details>
-<summary><strong>Q3.</strong> Why is this function dangerous?</summary>
+**Q3.** Why is this function dangerous?
 
 ```python
 def f(x, cache={}):
@@ -297,14 +300,19 @@ def f(x, cache={}):
     return cache
 ```
 
-**Answer:** The default `{}` is created once at function-definition time and reused across every call that doesn't pass `cache` explicitly — it silently accumulates state between unrelated calls. Use `cache=None` and create the dict inside the function instead.
+<details>
+<summary>Answer</summary>
+
+The default `{}` is created once at function-definition time and reused across every call that doesn't pass `cache` explicitly — it silently accumulates state between unrelated calls. Use `cache=None` and create the dict inside the function instead.
 
 </details>
 
-<details>
-<summary><strong>Q4.</strong> True or false: tuples are always fully immutable.</summary>
+**Q4.** True or false: tuples are always fully immutable.
 
-**Answer:** False. A tuple's *slots* can't be reassigned, but if it contains a mutable object (like a list), that inner object can still be mutated. Immutability is about the container's identity/structure, not necessarily everything reachable from it.
+<details>
+<summary>Answer</summary>
+
+False. A tuple's *slots* can't be reassigned, but if it contains a mutable object (like a list), that inner object can still be mutated. Immutability is about the container's identity/structure, not necessarily everything reachable from it.
 
 </details>
 
